@@ -1,0 +1,210 @@
+mem_config:
+  x18: 200
+  x19: 20000
+  x20: 40004
+  x21: null
+  x22: null
+  x23: null
+  x24: null
+  x25: null
+hardware_config:
+  total_pes: 16
+  data_dup: 1
+  clusters:
+    count: 16
+    pes_per_cluster: 1
+  psrf_mem_offset:
+    x18_offset: 1024
+    x19_offset: null
+    x20_offset: 1024
+    x21_offset: null
+    x22_offset: null
+    x23_offset: null
+    x24_offset: null
+    x25_offset: null
+scheduling:
+  minimum_pes_required: 1
+  pe_assignments:
+  - pe_id: 0
+    instructions:
+    - operation: HWL
+      format: hwl-type
+      loop_id: 1
+      pc_start: 2
+      pc_stop: 12
+      hwl_index: 10
+      iterations: 4
+    - operation: HWL
+      format: hwl-type
+      loop_id: 2
+      pc_start: 4
+      pc_stop: 12
+      hwl_index: 11
+      iterations: 64
+    - operation: HWL
+      format: hwl-type
+      loop_id: 3
+      pc_start: 6
+      pc_stop: 12
+      hwl_index: 12
+      iterations: 64
+    - operation: psrf.lw
+      ra1: x1
+      base_address: x18
+      format: psrf-mem-type
+      var: 0
+      psrf_var:
+        v0: 10
+        v1: 12
+        v2: 0
+        v3: 0
+        v4: 0
+        v5: 0
+      coefficients:
+        c0: 256
+        c1: 4
+        c2: 0
+        c3: 0
+        c4: 0
+        c5: 0
+      offset: 0
+    - operation: psrf.lw
+      ra1: x2
+      base_address: x19
+      format: psrf-mem-type
+      var: 1
+      psrf_var:
+        v0: 12
+        v1: 11
+        v2: 0
+        v3: 0
+        v4: 0
+        v5: 0
+      coefficients:
+        c0: 256
+        c1: 4
+        c2: 0
+        c3: 0
+        c4: 0
+        c5: 0
+      offset: 0
+    - operation: psrf.lw
+      ra1: x3
+      base_address: x20
+      format: psrf-mem-type
+      var: 2
+      psrf_var:
+        v0: 10
+        v1: 11
+        v2: 0
+        v3: 0
+        v4: 0
+        v5: 0
+      coefficients:
+        c0: 256
+        c1: 4
+        c2: 0
+        c3: 0
+        c4: 0
+        c5: 0
+      offset: 0
+    - operation: MUL
+      rd: x1
+      ra1: x1
+      ra2: x2
+      format: r-type
+    - operation: ADD
+      rd: x3
+      ra1: x3
+      ra2: x1
+      format: r-type
+    - operation: psrf.sw
+      ra1: x3
+      base_address: x20
+      format: psrf-mem-type
+      var: 2
+      psrf_var:
+        v0: 10
+        v1: 11
+        v2: 0
+        v3: 0
+        v4: 0
+        v5: 0
+      coefficients:
+        c0: 256
+        c1: 4
+        c2: 0
+        c3: 0
+        c4: 0
+        c5: 0
+      offset: 0
+    - operation: ADD
+      rd: x3
+      ra1: x0
+      ra2: x0
+      format: r-type
+delay_start:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0

@@ -1,0 +1,32 @@
+# Build artifacts
+build/
+test/
+*.o
+*.so
+*.a
+
+# Executables
+dfg_processor
+risc_v_assembler
+
+# Generated files
+*.s
+*.bin
+*.mem
+assembly_files.txt
+test_file_list.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
