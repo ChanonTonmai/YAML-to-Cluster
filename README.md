@@ -11,33 +11,6 @@ YAC is a C++ toolchain consisting of two main components:
 
 The system supports custom instruction set extensions including PSRF (Processing Element Special Register File), CORF (Coefficient Register File), and HWLRF (Hardware Loop Register File) operations, making it ideal for high-performance computing applications like matrix operations.
 
-## Features
-
-### 🏗️ **Multi-Cluster Architecture Support**
-- Configurable cluster-based PE (Processing Element) organization
-- Support for data duplication across clusters
-- PE-specific memory addressing and offset calculations
-
-### 🔄 **Hardware Loop Support**
-- Native hardware loop instruction generation
-- Configurable loop iterations and PC ranges
-- Delay scheduling for timing synchronization
-
-### 📊 **Specialized Register Files**
-- **PSRF**: Processing Element Special Register File for memory operations
-- **CORF**: Coefficient Register File for constant values
-- **HWLRF**: Hardware Loop Register File for loop control
-
-### 🎯 **Advanced Memory Operations**
-- PSRF memory operations (`psrf.lw`, `psrf.sw`, `psrf.lb`, `psrf.sb`)
-- Zero-delay memory operations (`psrf.zd.lw`)
-- Cluster-aware base address loading
-- Memory offset handling with LUI/ADDI sequences
-
-### 🔧 **Function Call Support**
-- JAL/JALR instruction generation
-- Function address mapping
-- Return instruction handling
 
 ## Project Structure
 
@@ -99,6 +72,9 @@ make test
 # Clean build artifacts
 make clean
 ```
+
+Running `make test` queries YAML files from the `examples` folder and converts them into assembly files, saving them in the `test` folder. This process automatically creates the test folder if it doesn't already exist. It also generates an assembly file list used for combining the assembly files, preparing them to be packed to the cluster.
+
 
 ## Usage
 
